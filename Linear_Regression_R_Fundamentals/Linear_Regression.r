@@ -1,6 +1,26 @@
+##R fundatmentals
+## Vectors in R
+Vec = seq(1,5)
+Vec1 = c(1,2,3,4,5)
+Vec%*%Vec1 ## Got a number
+
+## Matrix in R
+Mat <- matrix(seq(1,5))
+Mat1 <- t(Mat)
+Mat1%*%Mat
+
+Mat2 <- matrix(seq(1,6),nrow =2,ncol = 3)
+Mat3 <- matrix(seq(1,6),nrow = 2,ncol = 3,byrow = T)
+
+## Data Frame in R
+Df <- data.frame(cA=c(1,2,3),cB=c(4,5,6),cC=c(7,8,9),row.names = c("rA",'rB','rC'))
+Mat4 <- as.matrix(Df)
+
+
 setwd('C:\\Users\\Xin\\Desktop\\Github-repo\\Independent_Data_Science_Projects\\Linear_Regression_R_Fundamentals')
 
 toluca <- read.table("Data.txt",header=F) ## toluca is 2D list, or say dataframe
+## read.table and read.csv both save the data as dataframe
 toluca[1]
 toluca[2]
 typeof(toluca[1]) ## a list
