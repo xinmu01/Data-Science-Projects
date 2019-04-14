@@ -1,1 +1,2 @@
-# Independent-Data-Science-Projects
+# Data Science Projects
+## Post Xin's data science practice projects
