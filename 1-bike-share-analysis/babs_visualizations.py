@@ -13,7 +13,7 @@ def filter_data(data, condition):
     
     Example: ["duration < 15", "start_city == 'San Francisco'"]
     """
-
+    
     # Only want to split on first two spaces separating field from operator and
     # operator from value: spaces within value should be retained.
     field, op, value = condition.split(" ", 2) ## 2 means only split 2 out
@@ -21,7 +21,7 @@ def filter_data(data, condition):
     # check if field is valid
     if field not in data.columns.values :
         raise Exception("'{}' is not a feature of the dataframe. Did you spell something wrong?".format(field))
-
+    
     # convert value into number or strip excess quotes if string
     try:
         value = float(value)
@@ -65,7 +65,7 @@ def usage_stats(data, filters = [], verbose = True):
 
     # Compute statistics for trip durations.
     duration_mean = data['duration'].mean()
-    duration_qtiles = data['duration'].quantile([.25, .5, .75]).as_matrix()
+    duration_qtiles = data['duration'].quantile([.25, .5, .75]).values
     
     # Report computed statistics if verbosity is set to True (default).
     if verbose:
@@ -163,5 +163,8 @@ def usage_plot(data, key = '', filters = [], **kwargs):
     key_name = ' '.join([x.capitalize() for x in key.split('_')])
     plt.xlabel(key_name)
     plt.ylabel("Number of Trips")
-    plt.title("Number of Trips by {:s}".format(key_name))
+    if len(filters) == 0:
+        plt.title("Number of Trips by {:s}".format(key_name))
+    else:
+        plt.title("Number of Trips by {:s} when {}".format(key_name,','.join(filters)))
     plt.show()
