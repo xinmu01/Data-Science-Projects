@@ -1,1 +1,0 @@
-jupyter notebook Data_Analyst_ND_Project0.ipynb ## open file terminal
