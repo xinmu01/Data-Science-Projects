@@ -1,9 +1,14 @@
+
+#In this project, I explore a hospital infection rate dataset, and build a linear regression model to predict the 
+#infection rate.
+
 rm(list=ls())
-setwd("D:\\XinMu\\Course_Work\\Fall_2016\\Linear Model\\Midterm2_Takehome")
-hospital <- read.table("midterm2takehome.txt", header = FALSE, col.names = c("ID","X_LS","X_Age","Y",
+setwd("C:\\Users\\Xin\\Desktop\\Xin_Mu_Study\\Git-repo\\git-fast\\data-science-projects\\6-US-hospital-infection-risk-statistical-analysis\\data")
+hospital <- read.table("US_Hospital_Infection_Risk_Statistical_Analysis.txt", header = FALSE, col.names = c("ID","X_LS","X_Age","Y",
                                                                              "X_Rcul","X_RcXray","X_beds",
                                                                              "X_MedScho","X_Regi","X_census",
-                                                                             "X_nurse","X_serv"))
+  
+                                                                                                                                                        "X_nurse","X_serv"))
 attach(hospital)
 
 ##Examine relation between Y and all the predictors
