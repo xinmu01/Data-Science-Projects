@@ -170,3 +170,6 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+#Too larger file
+.json
+.json.gz
