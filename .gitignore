@@ -171,5 +171,5 @@ vignettes/*.pdf
 .Renviron
 
 #Too larger file
-.json
-.json.gz
+*.json
+*.json.gz
